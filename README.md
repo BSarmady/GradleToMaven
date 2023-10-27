@@ -1,15 +1,34 @@
 # GradleToMaven
-This tiny windows application will use gradle cache to construct local maven. Most of the times when I'm home my access to internet is very limited or none-existing on weekends due to data prices in my country in remote areas. This will make trying to compile applications with Gradle impossible. Having a local maven helps me to have my libraries locally and gradle will not require access to internet to refresh its cache at least once a day. I compile the application in office once, and create a local maven then I can continue using local maven instead of public one, by adding reference to my local maven to project on top of existing ones.
-
+This tiny windows application will use gradle cache to construct local maven. Most of the times when I'm home my access to internet is very limited or none-existing on weekends due to data prices in my country in remote areas. This will make trying to compile applications with Gradle impossible. Gradle need access internet to refresh its cache at least once a day but when your libraries exist in local maven, cache will be refereshed from local too. I compile the application in office once which will create a Gradle cache, then I update my local maven using this utility. Now I can continue using local maven instead of public, by adding reference to my local maven to project on top of existing ones; When a local copy doesn't exists, I will still need to connect to internet to fetch it, but that would be better than downloading gigs of data on a internet connection that charges me per MegaByte.
 
 ## How to use it
-To use this tool create a local folder preferably in root of your drive.
+Create a local folder preferably in root of your drive.
 
-Once created the folder, from windows explorer drag the folder on top of executable and it will magically copy the files from gradle cache and create a local maven in the folder you have created.
+From windows explorer drag that folder over this executable and it will magically copy the files from gradle cache and create a local maven in the folder you have created.
+To Reference your local maven in project, add following line above your existing online repositories inside `repositories` tag
+
+```
+maven { url 'PathToYourLocalMaven' }
+```
 
 If you are running this app from console, you can run it as 
 
-`GradleToMaven (PathToYourLocalMaven)`
+```
+GradleToMaven (PathToYourLocalMaven)
+```
+
+### Example:
+```
+GradleToMaven Z:\maven
+```
+
+```
+repositories {
+    maven { url 'Z:\maven' }
+    mavenCentral()
+    google()
+}
+```
 
 
 ## Notes:
