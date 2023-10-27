@@ -1,5 +1,5 @@
 # GradleToMaven
-This tiny windows tool will use gradle cache to construct local maven. Most of the times when I'm home my access to internet is very limited or none-existing on weekends due to data prices in my country in remote areas. This will make trying to compile applications with Gradle impossible. Having a local maven helps me to have my libraries locally and gradle will not require access to internet to refresh its cache at least once a day. I compile the application in office once, and create a local maven then I can continue using local maven instead of public one, by adding reference to my local maven to project on top of existing ones.
+This tiny windows application will use gradle cache to construct local maven. Most of the times when I'm home my access to internet is very limited or none-existing on weekends due to data prices in my country in remote areas. This will make trying to compile applications with Gradle impossible. Having a local maven helps me to have my libraries locally and gradle will not require access to internet to refresh its cache at least once a day. I compile the application in office once, and create a local maven then I can continue using local maven instead of public one, by adding reference to my local maven to project on top of existing ones.
 
 
 ## How to use it
